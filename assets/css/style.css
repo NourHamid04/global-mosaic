@@ -767,7 +767,17 @@ body {
   #PARTNER
 \*-----------------------------------*/
 
-.partner { background-color: var(--baby-powder); }
+:root {
+  --baby-powder: #f8f8f8;
+  --gray-color: #9e9e9e; /* Gray color */
+  --green-color: #4caf50; /* Green */
+  --purple-color: #8e44ad; /* Purple */
+  --cyan-color: #00bcd4; /* Cyan */
+}
+
+.partner {
+  background-color: var(--baby-powder);
+}
 
 .partner .container {
   display: flex;
@@ -777,12 +787,23 @@ body {
   gap: 50px;
 }
 
-.partner-logo .color,
-.partner-logo:is(:hover, :focus) .gray { display: none; }
+.partner-logo .color {
+  display: block; /* Show the colored logo by default */
+  filter: hue-rotate(180deg) brightness(1.2); /* Adjust colors for vibrant effect */
+}
 
-.partner-logo:is(:hover, :focus) .color,
-.partner-logo .gray { display: block; }
+.partner-logo .gray {
+  display: none; /* Hide the gray logo by default */
+  filter: grayscale(100%); /* Ensure the gray logo is fully grayscale */
+}
 
+.partner-logo:is(:hover, :focus) .color {
+  display: none; /* Hide the colored logo on hover/focus */
+}
+
+.partner-logo:is(:hover, :focus) .gray {
+  display: block; /* Show the gray logo on hover/focus */
+}
 
 
 
@@ -1195,7 +1216,7 @@ body {
    */
 
   .hero {
-    background-image: url("../images/hero1.jpg");
+    background-image: url("../images/hero12.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
